@@ -83,3 +83,10 @@ function myFunction2() {
        textInput.value="";//clear form input box
        }	
  )
+
+
+
+//listen to port 8000
+appserver.listen(8000, function(){
+	console.log('Listening on port 8000...');
+});
