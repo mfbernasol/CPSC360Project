@@ -46,12 +46,12 @@
           z-index: 1;
         }
         
-        .dropdown-content a {
+        /* .dropdown-content a {
           color: black;
           padding: 12px 16px;
           text-decoration: none;
           display: block;
-        }
+        } */
         
         .dropdown a:hover {background-color: #ddd;}
         
@@ -68,14 +68,8 @@
     </form>
         <p></p>
         <br></br>
-        <!-- <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">WHAT</button>
-            <div id="myDropdown" class="dropdown-content">
-              <a href="#home">----</a>
-              <a href="#mostrecent">MOST RECENT</a>
-              <a href="#worst">WORST</a> -->
               <label for="WHAT">WHAT</label>
-              <select id ="WHAT">
+              <select id ="what">
                 <option value = "---"> --- </option>
                 <option value = "most-recent"> MOST RECENT</option>
                 <option value = "WORST">WORST</option>
@@ -93,20 +87,12 @@
     </form>
     <p></p>
     <form>
-      <label for = "min-mag"> Minimum Magnitude: </label>
+      <label for = "min-mag"> Maximum Magnitude: </label>
       <input type="number" min ="0" step="0.01" id="mag" name="max-mag" required>
   </form>
     <br></br>
-    <!-- <div class="dropdown">
-        <button onclick="myFunction2()" class="dropbtn">TIMEFRAME</button>
-        <div id="myDropdown2" class="dropdown-content">
-          <a href="#hour">HOUR</a>
-          <a href="#day">DAY</a>
-          <a href="#week">WEEK</a>
-          <a href="#monthj">MONTH</a>
-        </div> -->
         <label for="TIMEFRAME">TIMEFRAME: </label>
-              <select id ="TIMEFRAME">
+              <select id ="timeframe">
                 <option value = "hour"> HOUR </option>
                 <option value = "day"> DAY</option>
                 <option value = "week">WEEK</option>
@@ -116,35 +102,6 @@
       </div>
       <p></p>
       <br></br>
-      <!-- <div class="dropdown">
-        <button onclick="myFunction3()" class="dropbtn">COUNTRY</button>
-        <div id="myDropdown3" class="dropdown-content">
-          <a href="#puertorico">PUERTO RICO</a>
-          <a href="#russia">RUSSIA</a>
-          <a href="#ecuador">ECUADOR</a>
-          <a href="#japan">JAPAN</a>
-          <a href="#mexico">MEXICO</a>
-          <a href="#fiji">FIJI</a>
-          <a href="#china">CHINA</a>
-          <a href="#chile">CHILE</a>
-          <a href="#samoa">SAMOA</a>
-          <a href="#indonesia">INDONESIA</a>
-          <a href="#peru">PERU</a>
-          <a href="#italy">ITALY</a>
-          <a href="#france">FRANCE</a>
-          <a href="#spain">SPAIN</a>
-          <a href="#taiwan">TAIWAN</a>
-          <a href="#canada">CANADA</a>
-          <a href="#unitedstates">UNITED STATES</a>
-          <a href="#argentina">ARGENTINA</a>
-          <a href="#albania">ALBANIA</a>
-          <a href="#hawaii">HAWAII</a>
-          <a href="#croatia">CROATIA</a>
-          <a href="#phillipines">PHILLIPINES</a>
-          <a href="#greece">GREECE</a>
-          <a href="#turkey">TURKEY</a>
-        </div> -->
-        <!--SELECT BOX-->
         <label for="country">COUNTRY: </label>
         <select id ="country">
           <option value = "puertorico"> Puerto Rico </option>
