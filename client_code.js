@@ -1,5 +1,15 @@
-
-
+//--THIS PART OF CODE KEEPS JAVASCRIPT VARIABLE UPDATED TO FORM INPUT--//
+//select text input in form and store to a variable
+const textInput = document.getElementById('mag');
+let mag = textInput.value;
+const textInput = document.getElementById('place');
+let place = textInput.value;
+const textInput = document.getElementById('date');
+let date = textInput.value;
+const textInput = document.getElementById('month');
+let month = textInput.value;
+const textInput = document.getElementById('year');
+let year = textInput.value;
 
 
 
