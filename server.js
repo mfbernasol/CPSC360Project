@@ -18,8 +18,8 @@ Set the API for your server to be available at <host>/earthquakes/.
 
 const express = require('express'); //import express
 const appserver = express();//initialize express
-const employdata = require('./data.json');//import employee data //loads our data into the employeedata object, so we can access properties like js object properties
-const earthquakeData = require('./earthquakeData.json');
+// const employdata = require('./data.json');//import employee data //loads our data into the employeedata object, so we can access properties like js object properties
+const earthquakeData = require('./data.json');
 const cors = require('cors'); //import cors package
 								//install: npm i --save cors
 								//easily publish API and receive query
