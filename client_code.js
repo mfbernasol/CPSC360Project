@@ -45,7 +45,7 @@ const form = document.querySelector('form')
 form.addEventListener('submit',function(e){
   e.preventDefault();
 
-  axios.get("http://localhost:8000/earthquakes/?howmany="+howmany + ).then(function(resp){outputdata(resp);}).catch(function(error){console.log(error);})
+  axios.get("http://localhost:8000/earthquakes/?howmany="+howmany +"&mag" + magnitude + "&month" + month + "&country" + countryResult).then(function(resp){outputdata(resp);}).catch(function(error){console.log(error);})
           
   
   
