@@ -20,7 +20,7 @@
     }      
         /* .dropdown-content a {
           color: black;
-          padding: 12px 16px;
+          padding: 12px 16px;+
           text-decoration: none;
           display: block;
         } */
@@ -34,37 +34,34 @@
 
 
 <body>
-    <form> 
-        <label for = "how-many">How Many: </label><br>
+	<form id="form" name="form">
+    <label for = "how-many">How Many: </label><br>
         <input type="number" min="1" id="howmany" name="howmany" required><br/>
-    </form>
         <p></p>
         <br></br>
-              <label for="WHAT">WHAT</label>
-              <select id ="what">
-                <option value = "---"> --- </option>
-                <option value = "most-recent"> MOST RECENT</option>
-                <option value = "WORST">WORST</option>
-              </select>
 
-
-            </div>
-          </div>
+        <label for="what">WHAT</label>
+        <select id ="what">
+            <option value = "nochoice"> --- </option>
+            <option value = "mostrecent"> MOST RECENT</option>
+              <option value = "worst">WORST</option>
+          </select>
+          
           <p></p>
-    
-    <br></br>
     <form>
         <label for = "min-mag"> Minimum Magnitude: </label>
-        <input type="number" min ="0" step="0.01" id="mag" name="min-mag" required>
+        <input type="number" min ="0" step="0.01" id="minmag" name="min-mag" required>
     </form>
     <p></p>
+
     <form>
       <label for = "min-mag"> Maximum Magnitude: </label>
-      <input type="number" min ="0" step="0.01" id="mag" name="max-mag" required>
+      <input type="number" min ="0" step="0.01" id="maxmag" name="max-mag" required>
   </form>
+
     <br></br>
         <label for="TIMEFRAME">TIMEFRAME: </label>
-              <select id ="timeframe">
+              <select id ="date">
                 <option value = "hour"> HOUR </option>
                 <option value = "day"> DAY</option>
                 <option value = "week">WEEK</option>
@@ -105,8 +102,8 @@
       </div>
       <p></p>
       <button type="submit"> SUBMIT </button>
-
     <script src="client_code.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
+
 </body>
 </html>
