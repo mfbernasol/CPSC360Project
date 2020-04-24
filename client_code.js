@@ -1,107 +1,82 @@
 //--THIS PART OF CODE KEEPS JAVASCRIPT VARIABLE UPDATED TO FORM INPUT--//
 //select text input in form and store to a variable
-const howManyInput = document.getElementById('mag');
+const howManyInput = document.getElementById('howmany');
 let howMany = howManyInput.value;
-const magInput = document.getElementById('place');
-let place = magInput.value;
+
+const magInput = document.getElementById('mag');
+let magnitude = magInput.value;
+
 const dateInput = document.getElementById('date');
 let date = dateInput.value;
+
 const monthInput = document.getElementById('month');
 let month = monthInput.value;
+
 const yearInput = document.getElementById('year');
 let year = yearInput.value;
 
 
+//RETREIVING VALUES 
 
-//drop down menu for WHAT
-// function myFunction() {
-//   document.getElementById("myDropdown").classList.toggle("show");
-// }
-// // Close the dropdown if the user clicks outside of it
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropbtn')) {
-//     var dropdowns = document.getElementsByClassName("dropdown-content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// }
-
-//RETREIVING VALUES
-
-//var e = document.getElementById("country");
-var result = e.options[e.selectedIndex].text;
-
-//drop down menu for TIMEFRAME
-function myFunction2() {
-    document.getElementById("myDropdown2").classList.toggle("show");
+//retrieves input from How Many field
+howManyInput.addEventListener('input',function(e){
+  howMany.e.target.value
   }
+)
+
+//retreives input from WHAT 
+  var w = document.getElementById("what")
+  var result = w.options[selectedIndex].text;
+
+
+
+//retrieves input from TIME FRAME
+var t = document.getElementById("timeframe")
+var timeResult = t.options[selectedIndex].text
+
+
+//retreives input from COUNTRY
+var c = document.getElementById('country')
+var countryResult = c.options[selectedIndex].text
+
+
+const form = document.querySelector('form')
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+
+  axios.get("http://localhost:8000/earthquakes/?howmany="+howmany + ).then(function(resp){outputdata(resp);}).catch(function(error){console.log(error);})
+          
   
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
+  
+  howManyInput.value= ""
+  }
+
+
+  )
+
+
+function outputData(resp){
+  console.log(resp.data)
+  console.log(resp.data.length)
+
+
+  let outputheading = document.querySelector('.outputheading')
+  let earthquakedata = document.querySelector('.earthquakedata')
+  let errormsg = document.querySelector('.error-message')
+
+  let earthquakelist=[]
+  let earthquakestr=''
+  
+  if(resp.data.length){
+    for(i=0;i<res.data.length;i++){
+      earthquakestr="A magnitude" + resp.data[i].mag + "earthquake occurred" + resp.data[i].place + " of"+ resp.data[i].month
     }
+  }else{
+    errormsg.innerHTML = "No earthquake data found"
   }
-
-  //Retrieve from drop down menu for COUNTRY 
-var e = document.getElementById("country");
-var result = e.options[e.selectedIndex].text;
-
-//   function myFunction3() {
-//     document.getElementById("myDropdown3").classList.toggle("show");
-//   }
   
-//   // Close the dropdown if the user clicks outside of it
-//   window.onclick = function(event) {
-//     if (!event.target.matches('.dropbtn')) {
-//       var dropdowns = document.getElementsByClassName("dropdown-content");
-//       var i;
-//       for (i = 0; i < dropdowns.length; i++) {
-//         var openDropdown = dropdowns[i];
-//         if (openDropdown.classList.contains('show')) {
-//           openDropdown.classList.remove('show');
-//         }
-//       }
-//     }
-//   }
-  
-  
-  
- //Retreiving input
- const form = document.querySelector('form');
 
- //this listens to event when "Submit" is clicked
- form.addEventListener('submit', function(e) {
-       // listener: prevent form default behavior
-       //e: event
-       e.preventDefault();//prevent default action if not handled explicitly
-       
-       //make request to API using axios
-       //axios lets us easily get API request
-       //make sure to include axios CDN in html
-       axios.get("http://localhost:8000/earthquakes/?howmany="+howmany.then(function(resp){
-                                         outputdata(resp);})
-                                         .catch(function(error){
-                                           console.log(error);
-                                         })
-       
-       
-       howManyInput.value="";//clear form input box
-       }	
- )
-
-
+}
 
 
